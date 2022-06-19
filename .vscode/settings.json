@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "iosfwd": "cpp",
+        "fstream": "cpp",
+        "ios": "cpp",
+        "ostream": "cpp",
+        "cassert": "cpp",
+        "numeric": "cpp",
+        "type_traits": "cpp",
+        "vector": "cpp",
+        "__locale": "cpp",
+        "locale": "cpp",
+        "map": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "algorithm": "cpp"
+    },
+    "terminal.integrated.showExitAlert": false,
+}
