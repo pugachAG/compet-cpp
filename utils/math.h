@@ -30,6 +30,11 @@ constexpr std::common_type_t<T1, T2> lcm(T1 v1, T2 v2) {
     return std::lcm(v1, v2);
 }
 
+template<class T>
+constexpr T abs(T v) {
+    return v > 0 ? v : -v;
+}
+
 /*
 template<typename T, typename... Args>
 void min(T v, Args... args) {

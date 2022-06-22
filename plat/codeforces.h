@@ -1,6 +1,7 @@
 #include "../core/defs.h"
 #include "../core/io.h"
 #include "../utils/vec.h"
+#include "../utils/iter.h"
 #include "../utils/math.h"
 
 /*

@@ -17,6 +17,8 @@ template<typename T>
 using set = std::set<T>;
 template<typename T>
 using hash_set = std::unordered_set<T>;
+template<typename T1, typename T2>
+using pair = std::pair<T1, T2>;
 
 template<typename T>
 using function = std::function<T>;

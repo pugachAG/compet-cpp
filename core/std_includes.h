@@ -13,5 +13,6 @@
 #include <utility>
 #include <functional>
 #include <numeric>
+#include <cassert>
 
 #endif

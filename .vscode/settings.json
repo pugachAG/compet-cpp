@@ -13,7 +13,11 @@
         "map": "cpp",
         "chrono": "cpp",
         "limits": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "__functional_03": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp"
     },
     "terminal.integrated.showExitAlert": false,
 }
