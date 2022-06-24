@@ -5,12 +5,13 @@
 
 struct rng_iterator {
     i32 val;
+    i32 dir;
 
-    rng_iterator(i32 val): val(val) {
+    rng_iterator(i32 val, i32 dir): val(val), dir(dir) {
     }
 
     rng_iterator& operator++() {
-        val++;
+        val += dir;
         return *this;
     }
 
@@ -30,19 +31,30 @@ struct rng_iterator {
 struct rng {
     i32 start;
     i32 bound;
+    i32 dir;
 
-    rng(i32 start, i32 bound): start(start), bound(bound) {
+    rng(i32 v1, i32 v2) {
+        if (v2 >= v1) {
+            start = v1;
+            bound = v2;
+            dir = 1;
+        } else {
+            start = v1-1;
+            bound = v2-1;
+            dir = -1;
+        }
     }
 
     rng(i32 bound): rng(0, bound) {
+        assert(bound >= 0);
     }
 
     rng_iterator begin() {
-        return rng_iterator(start);
+        return rng_iterator(start, dir);
     }
 
     rng_iterator end() {
-        return rng_iterator(bound);
+        return rng_iterator(bound, dir);
     }
 };
 

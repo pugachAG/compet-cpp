@@ -92,6 +92,19 @@
                 "close": true
             }
         },
+        {
+            "label": "gen dataclass macros",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "tools/gen_dataclass_macros.py"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "detail": "generates utils/dataclass.g"
+        },
     ],
     "version": "2.0.0"
 }

@@ -56,8 +56,8 @@ vec<T> read_vec(i32 sz) {
 #define READ_3(tp, var_1, var_2, var_3) READ_2(tp, var_1, var_2); READ_1(tp, var_3)
 #define READ_4(tp, var_1, var_2, var_3, var_4) READ_3(tp, var_1, var_2, var_3); READ_1(tp, var_4)
 #define READ_5(tp, var_1, var_2, var_3, var_4, var_5) READ_4(tp, var_1, var_2, var_3, var_4); READ_1(tp, var_5)
-#define GET_READ_NAME(_1, _2, _3, _4, _5, _6, NAME, ...) NAME
-#define READ(...) GET_READ_NAME(__VA_ARGS__, READ_5, READ_4, READ_3, READ_2, READ_1)(__VA_ARGS__)
+#define _GET_READ_NAME(_1, _2, _3, _4, _5, _6, NAME, ...) NAME
+#define READ(...) _GET_READ_NAME(__VA_ARGS__, READ_5, READ_4, READ_3, READ_2, READ_1)(__VA_ARGS__)
 #define READ_VEC(tp, var, sz) vec<tp> var = read_vec<tp>(sz)
 
 void _println() {

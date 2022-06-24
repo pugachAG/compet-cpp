@@ -16,6 +16,8 @@ using hash_map = std::unordered_map<K, V>;
 template<typename T>
 using set = std::set<T>;
 template<typename T>
+using multiset = std::multiset<T>;
+template<typename T>
 using hash_set = std::unordered_set<T>;
 template<typename T1, typename T2>
 using pair = std::pair<T1, T2>;

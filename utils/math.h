@@ -35,6 +35,11 @@ constexpr T abs(T v) {
     return v > 0 ? v : -v;
 }
 
+template<class T1, class T2>
+constexpr std::common_type_t<T1, T2> div_up(T1 v, T2 d) {
+    return v/d + (v%d > 0 ? 1 : 0);
+}
+
 /*
 template<typename T, typename... Args>
 void min(T v, Args... args) {

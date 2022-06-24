@@ -3,6 +3,7 @@
 #include "../utils/vec.h"
 #include "../utils/iter.h"
 #include "../utils/math.h"
+#include "../utils/dataclass.h"
 
 /*
 Enabling multi-tests:
