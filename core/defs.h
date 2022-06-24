@@ -2,6 +2,7 @@
 #define CORE_DEFS_H
 
 #include "std_includes.h"
+#include "hash.h"
 
 using i32 = int;
 using i64 = long long;
