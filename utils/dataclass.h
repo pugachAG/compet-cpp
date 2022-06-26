@@ -3,6 +3,9 @@
 #define DATACLASS_1(class_name, var_type_1, var_name_1) struct class_name {\
     var_type_1 var_name_1;\
 \
+    class_name() {\
+    }\
+\
     class_name(var_type_1 var_name_1): var_name_1(var_name_1) {\
     }\
 \
@@ -23,11 +26,18 @@
         }\
         return false;\
     }\
+\
+    bool operator>(const class_name& other) const {\
+        return *this != other && !(*this < other);\
+    }\
 }
 
 #define DATACLASS_2(class_name, var_type_1, var_name_1, var_type_2, var_name_2) struct class_name {\
     var_type_1 var_name_1;\
     var_type_2 var_name_2;\
+\
+    class_name() {\
+    }\
 \
     class_name(var_type_1 var_name_1, var_type_2 var_name_2): var_name_1(var_name_1), var_name_2(var_name_2) {\
     }\
@@ -54,6 +64,10 @@
             return false;\
         }\
         return false;\
+    }\
+\
+    bool operator>(const class_name& other) const {\
+        return *this != other && !(*this < other);\
     }\
 }
 

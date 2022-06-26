@@ -24,15 +24,6 @@ vec<T> reversed(const vec<T> &a) {
     return b;
 }
 
-
-template<typename T>
-T pop_back(vec<T> & a) {
-    auto v = a.back();
-    a.pop_back();
-    return v;
-}
-
-
 template<typename T, typename F>
 vec<vec<T>> group_consec(const vec<T> &a, F take) {
     i32 sz = a.size();

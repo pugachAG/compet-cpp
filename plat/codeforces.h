@@ -2,6 +2,7 @@
 #include "../core/io.h"
 #include "../utils/vec.h"
 #include "../utils/iter.h"
+#include "../utils/containers.h"
 #include "../utils/math.h"
 #include "../utils/dataclass.h"
 
@@ -13,6 +14,9 @@ ENABLE_MULTITEST;
 i32 multitest_enalbed = 0;
 #define ENABLE_MULTITEST i32 multitest_enalbed_ignore = ++multitest_enalbed
 
+void println_yes_no(bool ans) {
+    println(ans ? "Yes" : "No");
+}
 
 void solve();
 

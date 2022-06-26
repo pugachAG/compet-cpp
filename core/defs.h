@@ -20,6 +20,10 @@ template<typename T>
 using multiset = std::multiset<T>;
 template<typename T>
 using hash_set = std::unordered_set<T>;
+template<typename T>
+using max_queue = std::priority_queue<T>;
+template<typename T>
+using min_queue = std::priority_queue<T, vec<T>, std::greater<T>>;
 template<typename T1, typename T2>
 using pair = std::pair<T1, T2>;
 

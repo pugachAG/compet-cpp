@@ -3,18 +3,22 @@
 
 class simple_graph {
 public:
-    simple_graph(i32 sz): g(sz) {
+    simple_graph(i32 sz): _g(sz) {
     }
 
     void add_edge(i32 v, i32 u, bool bidirectional=true) {
-        g[v].push_back(u);
+        _g[v].push_back(u);
         if (bidirectional) {
-            g[u].push_back(v);
+            _g[u].push_back(v);
         }
     }
 
+    vec<i32>& adj(i32 v) {
+        return _g[v];
+    }
+
     vec<vec<i32>> connected_components() {
-        i32 n = g.size();
+        i32 n = _g.size();
         vec<bool> visited(n);
         vec<vec<i32>> ans;
         for (i32 v0: rng(n)) {
@@ -25,7 +29,7 @@ public:
             vec<i32> cur = {v0};
             for (i32 i = 0; i < cur.size(); i++) {
                 i32 v = cur[i];
-                for (i32 u: g[v]) {
+                for (i32 u: _g[v]) {
                     if (!visited[u]) {
                         cur.push_back(u);
                         visited[u] = true;
@@ -38,5 +42,5 @@ public:
     }
 
 private:
-    vec<vec<i32>> g;
+    vec<vec<i32>> _g;
 };

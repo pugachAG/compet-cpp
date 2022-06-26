@@ -57,16 +57,24 @@ class Generator:
                 ident=1
             )
         self.add_macro_empty_line()
-        self.gen_contstructor(var_cnt)
+        self.gen_empty_contstructor()
+        self.add_macro_empty_line()
+        self.gen_params_contstructor(var_cnt)
         self.add_macro_empty_line()
         self.gen_eq_operator(var_cnt)
         self.add_macro_empty_line()
         self.gen_not_eq_operator()
         self.add_macro_empty_line()
         self.gen_less_operator(var_cnt)
+        self.add_macro_empty_line()
+        self.gen_greater_operator()
         self.add_macro_line("}", ident=0, last=True)
 
-    def gen_contstructor(self, var_cnt):
+    def gen_empty_contstructor(self):
+        self.start_func(f"{CLASS_NAME}()")
+        self.end_func()
+
+    def gen_params_contstructor(self, var_cnt):
         params = join_params(f"{var_type(i)} {var_name(i)}" for i in range(var_cnt))
         inits = join_params(f"{var_name(i)}({var_name(i)})" for i in range(var_cnt))
         self.start_func(f"{CLASS_NAME}({params}): {inits}")
@@ -101,6 +109,14 @@ class Generator:
                 self.add_macro_line(f"return {res};", ident=3);
                 self.add_macro_line("}", ident=2);
         self.add_macro_line("return false;", ident=2);
+        self.end_func()
+
+    def gen_greater_operator(self):
+        self.start_func(operator_with_other_decl(">"))
+        self.add_macro_line(
+            f"return *this != other && !(*this < other);",
+            ident=2
+        )
         self.end_func()
 
     def start_func(self, decl):
