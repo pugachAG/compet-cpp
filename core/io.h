@@ -1,7 +1,7 @@
 #ifndef CORE_IO_H
 #define CORE_IO_H
 
-#include "defs.h"
+#include "std_includes.h"
 #include <iostream>
 #include <fstream> 
 #include <type_traits>
@@ -43,9 +43,9 @@ T read() {
 }
 
 template<typename T>
-vec<T> read_vec(i32 sz) {
-    vec<T> res(sz);
-    for (i32 i = 0; i < sz; i++) {
+std::vector<T> read_vec(int sz) {
+    std::vector<T> res(sz);
+    for (auto i = 0; i < sz; i++) {
         res[i] = read<T>();
     }
     return res;
@@ -58,19 +58,19 @@ vec<T> read_vec(i32 sz) {
 #define READ_5(tp, var_1, var_2, var_3, var_4, var_5) READ_4(tp, var_1, var_2, var_3, var_4); READ_1(tp, var_5)
 #define _GET_READ_NAME(_1, _2, _3, _4, _5, _6, NAME, ...) NAME
 #define READ(...) _GET_READ_NAME(__VA_ARGS__, READ_5, READ_4, READ_3, READ_2, READ_1)(__VA_ARGS__)
-#define READ_VEC(tp, var, sz) vec<tp> var = read_vec<tp>(sz)
+#define READ_VEC(tp, var, sz) std::vector<tp> var = read_vec<tp>(sz)
 
 void _println() {
     *out << "\n";
 }
 
 template<typename T>
-void _write(std::ostream &os, T v) {
+void _write(std::ostream &os, const T &v) {
     os << v;
 }
 
 template<typename T>
-void _write(std::ostream &os, vec<T> a) {
+void _write(std::ostream &os, const std::vector<T> &a) {
     for (auto i = 0; i < a.size(); i++) {
         if (i > 0) {
             os << " ";
@@ -80,7 +80,7 @@ void _write(std::ostream &os, vec<T> a) {
 }
 
 template<typename T, typename... Args>
-void _write(std::ostream &os, T v, Args... args) {
+void _write(std::ostream &os, const T &v, Args... args) {
     os << v << " ";
     _write(os, args...);
 }
@@ -90,7 +90,7 @@ void _writeln(std::ostream &os) {
 }
 
 template<typename T, typename... Args>
-void _writeln(std::ostream &os, T v, Args... args) {
+void _writeln(std::ostream &os, const T &v, Args... args) {
     _write(os, v, args...);
     _writeln(os);
 }

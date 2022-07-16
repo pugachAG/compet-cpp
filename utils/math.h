@@ -1,3 +1,6 @@
+#ifndef UTILS_MATH_H
+#define UTILS_MATH_H
+
 #include "../core/defs.h"
 
 template<class T1, class T2>
@@ -40,10 +43,4 @@ constexpr std::common_type_t<T1, T2> div_up(T1 v, T2 d) {
     return v/d + (v%d > 0 ? 1 : 0);
 }
 
-/*
-template<typename T, typename... Args>
-void min(T v, Args... args) {
-    os << v << " ";
-    _write(os, args...);
-}
-*/
+#endif

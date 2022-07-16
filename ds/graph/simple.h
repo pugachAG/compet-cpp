@@ -1,5 +1,5 @@
 #include "../../core/defs.h"
-#include "../../utils/iter.h"
+#include "../../utils/rng.h"
 
 class simple_graph {
 public:

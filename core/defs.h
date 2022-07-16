@@ -26,6 +26,8 @@ template<typename T>
 using min_queue = std::priority_queue<T, vec<T>, std::greater<T>>;
 template<typename T1, typename T2>
 using pair = std::pair<T1, T2>;
+template<typename T>
+using deque = std::deque<T>;
 
 template<typename T>
 using function = std::function<T>;

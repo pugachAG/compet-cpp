@@ -7,6 +7,13 @@ T pop_back(vec<T> &a) {
     return v;
 }
 
+template<typename T>
+T pop_front(deque<T> &a) {
+    auto v = a.front();
+    a.pop_front();
+    return v;
+}
+
 template<typename T, typename CONT, typename CMP>
 T pop(std::priority_queue<T, CONT, CMP> &q) {
     auto res = q.top();

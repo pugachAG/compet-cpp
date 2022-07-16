@@ -1,4 +1,5 @@
 CLASS_NAME = "class_name"
+MAX_VAR_CNT = 4
 
 def var_type(i):
     return f"var_type_{i+1}"
@@ -28,7 +29,7 @@ class Generator:
     def gen_file(self):
         self.add_line('#include "macro.h"')
         self.add_empty_line()
-        var_cnt = 2
+        var_cnt = MAX_VAR_CNT
         for var_cnt in range(1, var_cnt+1):
             self.gen_dataclass(var_cnt)
             self.add_empty_line()
