@@ -1,4 +1,5 @@
 from os import path
+from pathlib import Path
 
 INCLUDE = "#include"
 QUOTE = '"'
@@ -30,6 +31,7 @@ def enter(res, visited, file_path):
 def main():
     res = list()
     enter(res, set(), "main.cpp")
+    Path("out").mkdir(parents=True, exist_ok=True)
     write_lines("out/submit.cpp", res)
 
 if __name__ == '__main__':
