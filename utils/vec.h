@@ -1,3 +1,6 @@
+#ifndef UTILS_VEC_H
+#define UTILS_VEC_H
+
 #include "../core/defs.h"
 
 template<typename T>
@@ -10,6 +13,12 @@ vec<T> sorted(const vec<T> &a) {
     auto b = a;
     sort(b);
     return b;
+}
+
+vec<i32> iota(i32 sz, i32 start = 0) {
+    vec<i32> res(sz);
+    std::iota(res.begin(), res.end(), start);
+    return res;
 }
 
 template<typename T>
@@ -39,3 +48,5 @@ vec<vec<T>> group_consec(const vec<T> &a, F take) {
     res.push_back(move(cur));
     return res;
 }
+
+#endif

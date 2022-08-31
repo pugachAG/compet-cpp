@@ -1,3 +1,6 @@
+#ifndef SIMPLE_GRAPH_H
+#define SIMPLE_GRAPH_H
+
 #include "../../core/defs.h"
 #include "../../utils/rng.h"
 
@@ -44,3 +47,5 @@ public:
 private:
     vec<vec<i32>> _g;
 };
+
+#endif

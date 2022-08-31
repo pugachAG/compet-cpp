@@ -1,5 +1,5 @@
 #include "../../testing/unit.h"
-#include "basic.h"
+#include "simple.h"
 
 struct sum_inc_ops {
     static i32 combine(i32 a, i32 b) {
@@ -13,7 +13,7 @@ struct sum_inc_ops {
 
 void basic_test() {
     vec<i32> a = {1, 2, 3, 4};
-    seg_tree<sum_inc_ops> st(a);
+    simple_seg_tree<sum_inc_ops> st(a);
     ASSERT_EQ(st.get(0, 1), 3);
     ASSERT_EQ(st.get(2, 2), 3);
     ASSERT_EQ(st.get(0, 3), 10);

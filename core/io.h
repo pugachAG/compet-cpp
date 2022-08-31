@@ -33,6 +33,7 @@ void configure_io() {
         out = &std::cout;
         enable_fast_input();
     }
+    out->precision(10);
 }
 
 template<typename T>

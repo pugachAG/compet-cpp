@@ -14,15 +14,15 @@ struct seg_tree_ops {
  */
 
 template<typename OPS>
-class seg_tree {
+class simple_seg_tree {
 public:
     using T = return_of_t<decltype(&OPS::combine)>;
     using U = second_arg_of_t<decltype(&OPS::update)>;
 
-    seg_tree(i32 n): _data(4*n), _n(n) {
+    simple_seg_tree(i32 n): _data(4*n), _n(n) {
     }
 
-    seg_tree(const vec<T> &a): seg_tree(a.size()) {
+    simple_seg_tree(const vec<T> &a): simple_seg_tree(a.size()) {
         _bld(a, 1, 0, _n-1);
     }
 

@@ -6,6 +6,8 @@
 
 using i32 = int;
 using i64 = long long;
+using f64 = double;
+using ui64 = unsigned long long;
 using str = std::string;
 
 template<typename T>
